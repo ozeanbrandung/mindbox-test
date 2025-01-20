@@ -1,0 +1,47 @@
+.todoList {
+    padding: 24px;
+}
+
+.title {
+    font-size: 120px;
+    line-height: 1;
+    font-weight: 400;
+    text-align: center;
+    color: #ecdfdf;
+
+   margin: 0 0 24px;
+}
+
+.input {
+    width: 100%;
+    padding: 14px 8px;
+    border: 0;
+    border-bottom: 1px solid gainsboro;
+}
+
+.border {
+    background-color: white;
+    width: 600px;
+    /*padding: 16px;*/
+    margin: 0 auto;
+
+    box-shadow: rgb(216, 216, 218) 0px 0px 0px 2px inset, rgb(247, 246, 246) 4px 4px 0px -3px, rgb(216, 216, 218) 4px 4px, rgb(247, 246, 246) 8px 8px 0px -3px, rgb(216, 216, 218) 8px 8px;
+}
+
+.item {
+    padding: 14px 8px;
+    border-bottom: 1px solid gainsboro;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 8px;
+    align-items: center;
+    color: gray;
+}
+
+.filters {
+    display: flex;
+    gap: 8px;
+}
