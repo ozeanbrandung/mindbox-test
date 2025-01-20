@@ -19,6 +19,7 @@ export type TodoDto = {
 
 export const todoListApi = {
   baseKey: "todos",
+  
   getTodoListQueryOptions: () => {
     return queryOptions({
         queryKey: [todoListApi.baseKey, 'list'],
@@ -29,6 +30,13 @@ export const todoListApi = {
               signal: meta.signal
             }
           )
+    });
+  },
+
+  createTodo: (data: TodoDto) => {
+    return apiInstance<TodoDto>(`/todos`, {
+      method: "POST",
+      json: data
     });
   },
 }

@@ -1,4 +1,5 @@
 import styles from './todo-list.module.scss';
+import { useCreateTodo } from './use-create-todo';
 import { useGetTodoList } from './use-get-todo-list';
 
 // const todos = [
@@ -10,13 +11,23 @@ import { useGetTodoList } from './use-get-todo-list';
 export function TodoList() {
 
     const {todos} = useGetTodoList();
+    const {handleCreate} = useCreateTodo();
+
+    function handleClickEnter(e: React.MouseEvent<HTMLInputElement>) {
+        if (e.key === 'Enter' || e.keyCode === 13) {
+            console.log('Enter');
+            handleCreate(e);
+        }
+    }
+
+    const left = todos?.filter((todo) => !todo.isCompleted).length;
 
   return (
    <section className={styles.todoList}>
         <h1 className={styles.title}>todos</h1>
 
         <div className={styles.border}>
-            <input className={styles.input} type="text" placeholder="What needs to be done?" />
+            <input className={styles.input} type="text" placeholder="What needs to be done?" onKeyUp={handleClickEnter}/>
             
             <ul className={styles.list}>
                 {todos?.map((todo) => (
@@ -27,7 +38,7 @@ export function TodoList() {
              ))}
             </ul>
             <footer className={styles.footer}>
-                <span className={styles.left}>0 left</span>
+                <span className={styles.left}>{`${left} items left`}</span>
                 <ul className={styles.filters}>
                     <li className={styles.filter} tabIndex={0}>All</li>
                     <li className={styles.filter} tabIndex={0}>Active</li>
