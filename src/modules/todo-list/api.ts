@@ -39,4 +39,11 @@ export const todoListApi = {
       json: data
     });
   },
+
+  updateTodo: (data: Partial<TodoDto> & { id: string }) => {
+    return apiInstance<TodoDto>(`/todos/${data.id}`, {
+      method: "PATCH",
+      json: data
+    });
+  },
 }

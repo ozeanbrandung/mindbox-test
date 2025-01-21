@@ -1,5 +1,6 @@
 .todoList {
     padding: 24px;
+    font-size: 20px;
 }
 
 .title {
@@ -25,12 +26,29 @@
     /*padding: 16px;*/
     margin: 0 auto;
 
-    box-shadow: rgb(216, 216, 218) 0px 0px 0px 2px inset, rgb(247, 246, 246) 4px 4px 0px -3px, rgb(216, 216, 218) 4px 4px, rgb(247, 246, 246) 8px 8px 0px -3px, rgb(216, 216, 218) 8px 8px;
+    box-shadow: rgb(216, 216, 218) 0px 0px 0px 2px inset, rgb(247, 246, 246) 6px 6px 0px -2px, rgb(216, 216, 218) 6px 6px, rgb(247, 246, 246) 12px 12px 0px -2px, rgb(216, 216, 218) 12px 12px;
+}
+
+.list {
+    max-height: 600px;
+    overflow-y: auto;
 }
 
 .item {
     padding: 14px 8px;
     border-bottom: 1px solid gainsboro;
+}
+
+.text {
+    display: inline-block;
+    margin-left: 14px;
+}
+
+.completed {
+    .text {
+        color: gainsboro;
+        text-decoration: line-through;
+    }
 }
 
 .footer {

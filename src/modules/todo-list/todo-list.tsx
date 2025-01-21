@@ -1,6 +1,8 @@
 import styles from './todo-list.module.scss';
 import { useCreateTodo } from './use-create-todo';
 import { useGetTodoList } from './use-get-todo-list';
+import { useToggleTodo } from './use-toggle-todo';
+import clsx from 'clsx';
 
 // const todos = [
 //     { id: 1, text: 'Learn React', isCompleted: false },
@@ -12,6 +14,7 @@ export function TodoList() {
 
     const {todos} = useGetTodoList();
     const {handleCreate} = useCreateTodo();
+    const { toggleTodo } = useToggleTodo();
 
     function handleClickEnter(e: React.MouseEvent<HTMLInputElement>) {
         if (e.key === 'Enter' || e.keyCode === 13) {
@@ -31,9 +34,13 @@ export function TodoList() {
             
             <ul className={styles.list}>
                 {todos?.map((todo) => (
-                 <li className={styles.item} key={todo.id}>
-                    <input type="checkbox" checked={todo.isCompleted} />
-                    <span>{todo.text}</span>
+                 <li className={clsx(styles.item, {[styles.completed]: todo.isCompleted})} key={todo.id}>
+                    <input 
+                        type="checkbox" 
+                        checked={todo.isCompleted} 
+                        onChange={() => toggleTodo(todo.id, todo.isCompleted)}
+                    />
+                    <span className={styles.text}>{todo.text}</span>
                 </li>
              ))}
             </ul>

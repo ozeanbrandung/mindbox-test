@@ -3,7 +3,7 @@
     {
       "id": "1",
       "text": "Learn React",
-      "isCompleted": false
+      "isCompleted": true
     },
     {
       "id": "2",
@@ -13,7 +13,7 @@
     {
       "id": "3",
       "text": "Learn Angular",
-      "isCompleted": false
+      "isCompleted": true
     },
     {
       "id": "MxG8YIuYU2BrZZinvT-2j",
@@ -27,8 +27,33 @@
     },
     {
       "id": "p3ecrZmCwTsdYYYJI5G4S",
-      "isCompleted": false,
+      "isCompleted": true,
       "text": "new task"
+    },
+    {
+      "id": "ad8tAmTUanIlHACzTSmmb",
+      "isCompleted": false,
+      "text": "dfd"
+    },
+    {
+      "id": "ztqSCTxyGBTiYJ--oAWRe",
+      "isCompleted": false,
+      "text": "dfdf"
+    },
+    {
+      "id": "hmoid_ir2JN11Lacl-64W",
+      "isCompleted": false,
+      "text": "kmlkj"
+    },
+    {
+      "id": "QLAXcEd8jlmSNh1O_8_7f",
+      "isCompleted": false,
+      "text": "ooooooooo"
+    },
+    {
+      "id": "BbvqaX9flHlevN-cNhOCU",
+      "isCompleted": false,
+      "text": "nbb"
     }
   ]
 }
