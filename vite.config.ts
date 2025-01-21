@@ -5,7 +5,7 @@ import { resolve } from 'path'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "",
+  base: "/mindbox-test/",
   optimizeDeps: {
     include: ['**/*.scss'], // Include all .scss files
   },
@@ -15,7 +15,7 @@ export default defineConfig({
       localsConvention: 'camelCaseOnly',
     },
   },
-  build:{
-    outDir: "dist"
-  }
+  // build:{
+  //   outDir: "dist"
+  // }
 })
