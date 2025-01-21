@@ -15,11 +15,7 @@ export default defineConfig({
       localsConvention: 'camelCaseOnly',
     },
   },
-  build: {
-    rollupOptions: {
-      input: {
-        main: resolve(__dirname, "index.html"),
-      }
-    }
+  build:{
+    outDir: "build"
   }
 })
