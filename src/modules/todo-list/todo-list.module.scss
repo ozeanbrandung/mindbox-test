@@ -62,4 +62,14 @@
 .filters {
     display: flex;
     gap: 8px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+}
+
+.filter {
+    padding: 0 6px;
+}
+
+.active {
+    border: 1px solid #ecdfdf;
 }

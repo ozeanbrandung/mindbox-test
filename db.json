@@ -1,19 +1,14 @@
 {
   "todos": [
     {
-      "id": "2",
-      "text": "Learn Vue",
-      "isCompleted": false
+      "id": "x7MfXHRPn3BvTbMuC4xqa",
+      "isCompleted": false,
+      "text": "dsfsdf"
     },
     {
-      "id": "MxG8YIuYU2BrZZinvT-2j",
+      "id": "kDYazRwf_WI3twYDLtNig",
       "isCompleted": false,
-      "text": "test app"
-    },
-    {
-      "id": "7_X45hkTpjIWgCB0vu_Es",
-      "isCompleted": false,
-      "text": "make breakfast"
+      "text": "dsfsdfsdf"
     }
   ]
 }

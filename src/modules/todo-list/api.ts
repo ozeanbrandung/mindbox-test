@@ -17,15 +17,22 @@ export type TodoDto = {
   isCompleted: boolean;
 };
 
+// const SortToUrlMap = {
+//   [Sort.DEFAULT]: '',
+//   [Sort.ACTIVE]: '?isCompleted=false',
+//   [Sort.COMPLETED]: '?isCompleted=true'
+// }
+
 export const todoListApi = {
   baseKey: "todos",
   
-  getTodoListQueryOptions: () => {
+  getTodoListQueryOptions: (/*sort: Sort = Sort.DEFAULT*/) => {
+    //const urlParam = SortToUrlMap[sort];
     return queryOptions({
         queryKey: [todoListApi.baseKey, 'list'],
         queryFn: meta =>
-          apiInstance<TodoDto>(
-            `/todos`,
+          apiInstance<TodoDto>('/todos',
+            //`/todos${urlParam}`,
             {
               signal: meta.signal
             }
