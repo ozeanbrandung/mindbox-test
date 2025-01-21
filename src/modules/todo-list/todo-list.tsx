@@ -1,5 +1,7 @@
+import { TodoDto } from './api';
 import styles from './todo-list.module.scss';
 import { useCreateTodo } from './use-create-todo';
+import { useDeleteTodos } from './use-delete-todos';
 import { useGetTodoList } from './use-get-todo-list';
 import { useToggleTodo } from './use-toggle-todo';
 import clsx from 'clsx';
@@ -11,10 +13,10 @@ import clsx from 'clsx';
 // ]
 
 export function TodoList() {
-
     const {todos} = useGetTodoList();
     const {handleCreate} = useCreateTodo();
     const { toggleTodo } = useToggleTodo();
+    const deleteTodos = useDeleteTodos();
 
     function handleClickEnter(e: React.MouseEvent<HTMLInputElement>) {
         if (e.key === 'Enter' || e.keyCode === 13) {
@@ -23,7 +25,9 @@ export function TodoList() {
         }
     }
 
-    const left = todos?.filter((todo) => !todo.isCompleted).length;
+    const completed:TodoDto[] = todos?.filter((todo) => todo.isCompleted);
+
+    const left:number = Number(todos?.length) - Number(completed?.length);
 
   return (
    <section className={styles.todoList}>
@@ -51,7 +55,11 @@ export function TodoList() {
                     <li className={styles.filter} tabIndex={0}>Active</li>
                     <li className={styles.filter} tabIndex={0}>Completed</li>
                 </ul>
-                <button className={styles.clear}>Clear Completed</button>
+                <button 
+                    className={styles.clear} 
+                    onClick={() => deleteTodos.handleDelete(completed)}
+                    disabled={deleteTodos.isPending}
+                >Clear Completed</button>
             </footer>
         </div>
    </section>

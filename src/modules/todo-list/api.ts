@@ -46,4 +46,14 @@ export const todoListApi = {
       json: data
     });
   },
+
+  deleteTodos: (data: Partial<TodoDto>[]) => {
+    const requests = data.map((todo) => {
+      return apiInstance(`/todos/${todo.id}`, {
+        method: "DELETE",
+      });
+    })
+
+    return Promise.all(requests)
+  }
 }
